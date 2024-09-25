@@ -1,1 +1,1 @@
-# PreethaMart
+# General Mart

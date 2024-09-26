@@ -1,4 +1,4 @@
-#!/Users/preethamyerragudi/PreethaMart/PreethaMart/env/bin/python3.11
+#!/Users/preethamyerragudi/GeneralMart/GeneralMart/env/bin/python3.11
 # -*- coding: utf-8 -*-
 import re
 import sys

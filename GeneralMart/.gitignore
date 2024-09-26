@@ -1,0 +1,10 @@
+# Database files
+*.db
+*.sqlite3
+
+# Django settings
+settings.py
+local_settings.py
+
+# Environment files
+.env

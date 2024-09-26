@@ -6,3 +6,9 @@ class Products(models.Model):
     price = models.DecimalField(decimal_places=2, max_digits=6)
     description = models.CharField(max_length=1000)
     image_url = models.CharField(max_length=1000)
+
+class Users(models.Model):
+    first_name = models.CharField(max_length=200)
+    last_name = models.CharField(max_length=200)
+    email = models.EmailField()
+    password = models.CharField(max_length=200)

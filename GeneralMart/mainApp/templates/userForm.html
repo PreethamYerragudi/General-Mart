@@ -1,0 +1,16 @@
+<html>
+    <body>
+        <form action="" method="post">
+            {% csrf_token %}
+            {{form}}
+
+            <input type="submit" value={{type}}>
+        </form>
+    </body>   
+    <script>
+        function func(message){
+            console.log(message);
+            alert(message);
+        }
+    </script>
+<html>

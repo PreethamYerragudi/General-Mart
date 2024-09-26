@@ -1,7 +1,12 @@
 from django import forms
-from .models import Users
+from .models import User
+
+class Login(forms.Form):
+    username = forms.CharField(max_length=200)
+    password = forms.CharField(max_length=200)
+
 
 class RegisterForm(forms.ModelForm):
     class Meta:
-        model = Users
+        model = User
         fields = '__all__'

@@ -1,16 +1,23 @@
-<html>
-    <body>
-        <form action="" method="post">
-            {% csrf_token %}
-            {{form}}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>User Form</title>
+        <!-- Load Django static files -->
+        {% load static %}
+        <!-- Link to external CSS file for form styles -->
+        <link rel="stylesheet" href="{% static 'form-styles.css' %}">
 
-            <input type="submit" value={{type}}>
-        </form>
-    </body>   
-    <script>
-        function func(message){
-            console.log(message);
-            alert(message);
-        }
-    </script>
-<html>
+    </head>
+    <body>
+        <div class="form-container">
+            <form action="" method="post">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <input type="submit" value="{{ type }}">
+            </form>
+            <a href="http://127.0.0.1:8000/" class="home-link">Home</a>
+        </div>
+    </body>
+</html>

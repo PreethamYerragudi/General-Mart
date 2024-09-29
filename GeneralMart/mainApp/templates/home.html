@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>General Mart</title>
+        <!-- Load Django static files -->
+        {% load static %}
+        <!-- Link to external CSS file -->
+        <link rel="stylesheet" href="{% static 'styles.css' %}">
+
+    </head>
+    <body>
+        <header>
+            <div class="header-container">
+                <h1>General Mart</h1>
+            </div>
+        </header>
+
+        <h2>Welcome {{name}}</h2>
+
+        <div class="buttons-container">
+            <a href="http://127.0.0.1:8000/login">Login</a>
+            <a href="http://127.0.0.1:8000/register">Register</a>
+        </div>
+
+        <footer>
+            <p>&copy; 2024 General Mart. All Rights Reserved.</p>
+        </footer>
+    </body>
+</html>

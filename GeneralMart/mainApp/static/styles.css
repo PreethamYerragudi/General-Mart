@@ -14,6 +14,7 @@ body {
 
 /* Header styling */
 header {
+    position: relative;
     background-color: #005b96; /* dark blue */
     padding: 20px;
     text-align: center;
@@ -22,12 +23,112 @@ header {
 
 /* General Mart title styling */
 header h1 {
+    display: inline-block;
+    text-align: center;
     color: #fff; /* white text */
     font-size: 2.5em;
     letter-spacing: 2px;
     text-transform: uppercase;
 }
+/* Trending Products Section */
+.trending-container {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
 
+.trending-container h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2rem;
+    color: #005b96;
+    position: relative;
+}
+
+.trending-container h2::after {
+    content: "";
+    display: block;
+    width: 80px;
+    height: 3px;
+    background: #007acc;
+    margin: 10px auto;
+}
+
+/* Product Grid */
+.trending-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 30px;
+    padding: 20px;
+}
+
+/* Product Card */
+.product-card {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.product-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-bottom: 1px solid #eee;
+}
+
+.product-card h3 {
+    font-size: 1.1rem;
+    margin: 15px 15px 5px;
+    color: #333;
+}
+
+.product-card p {
+    margin: 0 15px 15px;
+    color: #007acc;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+/* Add to Cart Button */
+.product-card .add-to-cart {
+    display: block;
+    background: #007acc;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    margin: 0 15px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background 0.3s;
+}
+
+.product-card .add-to-cart:hover {
+    background: #005b96;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .trending-container {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .trending-container {
+        grid-template-columns: 1fr;
+    }
+}
 /* Welcome message */
 h2 {
     text-align: center;
@@ -38,7 +139,7 @@ h2 {
 
 /* Button styling */
 a {
-    display: inline-block;
+
     padding: 10px 25px;
     margin: 10px;
     font-size: 1.1em;
@@ -52,13 +153,14 @@ a {
 
 /* Hover effect on buttons */
 a:hover {
-    background-color: #005b96; /* dark blue */
+    background-color: #029aff; /* dark blue */
 }
 
 /* Centering the buttons */
 .buttons-container {
     text-align: center;
     margin-top: 20px;
+    float: right;
 }
 
 /* Footer styling */

@@ -12,18 +12,27 @@
     </head>
     <body>
         <header>
+            <div class="buttons-container">
+                <a href="http://127.0.0.1:8000/login">Login</a>
+                <a href="http://127.0.0.1:8000/register">Register</a>
+            </div>
             <div class="header-container">
                 <h1>General Mart</h1>
             </div>
         </header>
 
         <h2>Welcome {{name}}</h2>
-
-        <div class="buttons-container">
-            <a href="http://127.0.0.1:8000/login">Login</a>
-            <a href="http://127.0.0.1:8000/register">Register</a>
+        <div class="trending-container">
+            <h2>Trending Products</h2>
+            {% for product in products %}
+                <div class="product-card">
+                    <img src="static/{{ product.image_url }}" alt="{{ product.name }}">
+                    <h3>{{ product.name }}</h3>
+                    <p>Price: ${{ product.price }}</p>
+                    <a href="#" class="add-to-cart">Add to Cart</a>
+                </div>
+            {% endfor %}
         </div>
-
         <footer>
             <p>&copy; 2024 General Mart. All Rights Reserved.</p>
         </footer>

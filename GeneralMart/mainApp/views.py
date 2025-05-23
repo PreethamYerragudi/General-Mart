@@ -7,6 +7,26 @@ from django.contrib.auth.models import User
 user = None
 loggedIn = False
 
+class Product:
+    def __init__(self, name, price, image_url=None):
+        self.name = name
+        self.price = price
+        self.image_url = image_url
+
+def getProducts():
+    products = []
+    file = open("mainApp/Products.csv", "r")
+    lines = file.readlines()
+    for line in lines:
+        line = line.strip()
+        if line == "":
+            continue
+        name, price, url = line.split(",")
+        product = Product(name, price, url)
+        products.append(product)
+    file.close()
+    return products
+
 def register(request):
     form = RegisterForm
     if request.method == 'POST':
@@ -34,7 +54,9 @@ def home(request):
         name = request.user.username
     else:
         name = "Unkown - Please Log In"
-    content = {'name':name}
+    content = {'name':name,
+               'products':getProducts(),
+               }
     return render(request, "home.html",content)
 
 def log_out(request):
